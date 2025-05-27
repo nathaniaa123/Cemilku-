@@ -10,6 +10,4 @@ Route::get('/mysterybox', function() {
     return view('mysterybox');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
