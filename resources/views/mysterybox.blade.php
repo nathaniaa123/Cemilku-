@@ -39,14 +39,14 @@
 
     <div class="mood_option">
         <div class="mood_column">
-            <div class="mood_box">Romantic</div>
-            <div class="mood_box">Funny</div>
-            <div class="mood_box">Calm</div>
+            <div class="mood_box1">Romantic</div>
+            <div class="mood_box2">Funny</div>
+            <div class="mood_box3">Calm</div>
         </div>
         <div class="mood_column">
-            <div class="mood_box">Mysterious</div>
-            <div class="mood_box">Brave</div>
-            <div class="mood_box">Happy</div>
+            <div class="mood_box4">Mysterious</div>
+            <div class="mood_box5">Brave</div>
+            <div class="mood_box6">Happy</div>
         </div>
     </div>
 

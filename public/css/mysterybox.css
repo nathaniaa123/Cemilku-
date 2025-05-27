@@ -142,7 +142,7 @@ body {
     right: 5vw;
 }
 
-.mood_box {
+.mood_box1, .mood_box2, .mood_box3, .mood_box4, .mood_box5, .mood_box6 {
     width: 17vw;
     height: 3vw;
     background-color: #D9D9D9;
@@ -156,8 +156,28 @@ body {
     margin-bottom: 3vw;
 }
 
-.mood_box:hover {
-    background-color: #fdc607;
+.mood_box1:hover {
+    background-color: #FD6FF3;
+}
+
+.mood_box2:hover {
+    background-color: #6FF3FD;
+}
+
+.mood_box3:hover {
+    background-color: #6FFD87;
+}
+
+.mood_box4:hover {
+    background-color: #C96FFD;
+}
+
+.mood_box5:hover {
+    background-color: #FD6F6F;
+}
+
+.mood_box6:hover {
+    background-color: #F3FD6F;
 }
 
 .next_button {
