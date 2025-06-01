@@ -94,7 +94,7 @@
                                 <img src="{{ asset('assets/images/borderLine.png') }}" alt="" class="w-100">
                             </div>
 
-                            <button class="btn btn-warning py-2 w-100 fw-bold text-brown1">Sign up with Google</button>
+                            <a href="{{route('google-redirect')}}" class="btn btn-warning py-2 w-100 fw-bold text-brown1">Sign up with Google</a>
 
                             <div class="w-100 mt-5 d-flex justify-content-center align-items-bottom">
                                 <p class="fw-bold text-brown1 text-center">Don't have an account? <span><a
