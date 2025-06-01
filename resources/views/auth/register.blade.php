@@ -45,7 +45,7 @@
 
                                 <input id="name" type="text"
                                     class="border border-warning form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    name="name" value="{{ old('name') }}" placeholder="Type your name" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
 
                                 <input id="phone_num" type="number"
                                     class="border border-warning form-control @error('phone_num') is-invalid @enderror"
-                                    name="phone_num" value="{{ old('phone_num') }}" required autocomplete="phone_num"
+                                    name="phone_num" value="{{ old('phone_num') }}" placeholder="Type your phone number" required autocomplete="phone_num"
                                     autofocus>
 
                                 @error('phone_num')
@@ -84,7 +84,7 @@
                                     class="col-form-label text-md-end">{{ __('Email Address') }}</label>
                                 <input id="email" type="email"
                                     class="border border-warning form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    name="email" value="{{ old('email') }}" placeholder="Type your email" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -97,7 +97,7 @@
                                 <label for="password" class="col-form-label text-md-end">{{ __('Password') }}</label>
                                 <input id="password" type="password"
                                     class="border border-warning form-control @error('password') is-invalid @enderror"
-                                    name="password" required autocomplete="new-password">
+                                    name="password" placeholder="Type your password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
                                     class="col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                                 <input id="password-confirm" type="password" class="border border-warning form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                    name="password_confirmation" placeholder="Retype your password" required autocomplete="new-password">
                             </div>
 
                             <input type="submit" value="Sign up"
