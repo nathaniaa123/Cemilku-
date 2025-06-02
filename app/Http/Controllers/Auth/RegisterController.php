@@ -82,7 +82,6 @@ class RegisterController extends Controller
 
     public function google_callback(){
         $googleUser = Socialite::driver('google')->user();
-
         $user = User::whereEmail($googleUser->email)->first();
 
         if(!$user){
@@ -90,13 +89,12 @@ class RegisterController extends Controller
                 'name' => $googleUser->name,
                 'email' => $googleUser->email,
                 'birth_date' => now(),
-                'phone_num' => "0800000000",
+                'profile_path' => $googleUser->avatar,
                 'password' => Hash::make('User1234'),
             ]);
         }
 
         Auth::login($user);
-
         return redirect()->route('home');
     }
 }
