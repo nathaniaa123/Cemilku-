@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -72,5 +74,27 @@ class RegisterController extends Controller
             'phone_num' => $data['phone_num'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function google_redirect(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function google_callback(){
+        $googleUser = Socialite::driver('google')->user();
+        $user = User::whereEmail($googleUser->email)->first();
+
+        if(!$user){
+            $user = User::create([
+                'name' => $googleUser->name,
+                'email' => $googleUser->email,
+                'birth_date' => now(),
+                'profile_path' => $googleUser->avatar,
+                'password' => Hash::make('User1234'),
+            ]);
+        }
+
+        Auth::login($user);
+        return redirect()->route('home');
     }
 }

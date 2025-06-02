@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('birth_date');
-            $table->string('phone_num')->unique();
+            $table->string('phone_num')->unique()->nullable();
             $table->integer('role')->default(1);
             $table->string('profile_path')->nullable();
             $table->string('email')->unique();
