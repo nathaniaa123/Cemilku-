@@ -1,24 +1,25 @@
 <?php
-
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Address;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
     // relasi one to many dari user terhadap address
-    public function addresses() {
-    return $this->hasMany(Address::class);
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
     }
 
-    public function mainAddress() {
-    return $this->belongsTo(Address::class, 'address_id');
+    public function mainAddress()
+    {
+        return $this->belongsTo(Address::class, 'address_id');
     }
 
     //relasi one to many dari user terhadap order
@@ -33,15 +34,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-    'name',
-    'email',
-    'password',
-    'phone_number',
-    'date_of_birth',
-    'profile_picture',
-    'alamat_id',
+        'name',
+        'email',
+        'password',
+        'phone_number',
+        'date_of_birth',
+        'profile_picture',
     ];
-
 
     /**
      * The attributes that should be hidden for serialization.
@@ -62,7 +61,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password'          => 'hashed',
         ];
     }
 }

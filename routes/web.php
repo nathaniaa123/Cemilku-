@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use PHPUnit\Framework\Attributes\Group;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\OrderController;
@@ -29,21 +32,19 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
 });
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
+Auth::routes(['verify'=>true]);
 
+Route::get('/auth-google-redirect', [RegisterController::class, 'google_redirect'])->name('google-redirect');
+Route::get('/auth-google-callback', [RegisterController::class, 'google_callback'])->name('google-callback');
 
-// Route::get('/admin', [DashboardController::class, 'index'])->name('admin.dashboard');
-// USER
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth', 'verified')->group(function(){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/mysterybox', function() {
+        return view('mysterybox');
+    });
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 // Address
 use App\Http\Controllers\AddressController;
