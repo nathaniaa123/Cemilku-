@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\GoogleMapController;
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('coba');
 });
 
 Auth::routes();
