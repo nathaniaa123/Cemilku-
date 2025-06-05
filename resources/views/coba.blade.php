@@ -45,8 +45,7 @@
                 <div class="container d-flex flex-column mb-5 align-items-center">
                     <a href="#" class="side-link side-link-2 p-2 active" data-slide-to="0">User Info</a>
                     <a href="#" class="side-link side-link-2 p-2 mt-1" data-slide-to="1">Address</a>
-                    <a href="#" class="side-link side-link-2 p-2 mt-1" data-slide-to="2">Notification</a>
-                    <a href="#" class="side-link side-link-2 p-2 mt-1" data-slide-to="3">Settings</a>
+                    <a href="#" class="side-link side-link-2 p-2 mt-1" data-slide-to="2">FAQ</a>
                     <hr class="garis" />
                 </div>
                 <div class="container d-flex justify-content-center align-items-center">
@@ -141,7 +140,7 @@
                         <!-- Slide 1: User Info -->
                         <div class="carousel-item active">
                             <div class="container d-flex p-4 flex-row">
-                                <div class="container    d-flex flex-column ms-5">
+                                <div class="container d-flex flex-column">
                                     <div class="d-flex flex-row align-items-center atas-profile p-3">
                                         <img src="{{ asset('orang2.jpg') }}" alt="orang"
                                             class="gambar-profile rounded-circle" />
@@ -217,13 +216,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 4: Settings -->
-                        <div class="carousel-item">
-                            <div class="p-5">
-                                <h2>Settings</h2>
-                                <p>Update your profile and preferences here.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

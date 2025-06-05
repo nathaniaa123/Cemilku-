@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\Framework\Attributes\Group;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\UserController;
+// use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SnackController;
 use App\Http\Controllers\admin\CustomizeController;
@@ -44,9 +44,11 @@ Route::middleware('auth', 'verified')->group(function(){
     Route::get('/mysterybox', function() {
         return view('mysterybox');
     });
-    Route::get('/profile', function () {
+
+});
+
+Route::get('/profile', function () {
       return view('coba');
-    });
 });
 
 // Address
