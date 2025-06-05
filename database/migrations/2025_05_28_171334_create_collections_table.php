@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('snack_id_4')->nullable()->constrained('snacks')->nullOnDelete();
             $table->enum('layer', [2, 3, 4]);
             $table->timestamps();
+            $table->softDeletes();
         });
 
 

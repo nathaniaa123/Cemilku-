@@ -101,6 +101,12 @@ h3{
     color: white;
 }
 
+.btn-yellowbrown{
+    background-color: #FDC607 !important;
+
+    color: #52282A !important;
+}
+
 .page-item.active .page-link{
     background-color: #00AEC7 !important;
     color: white;

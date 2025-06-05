@@ -18,7 +18,8 @@ class AddressSeeder extends Seeder
             'kota_kabupaten' => 'Bandung',
             'kecamatan' => 'Coblong',
             'kelurahan_desa' => 'Dago',
-            'rt_rw' => '01/02',
+            'rt' => '01',
+            'rw' => '02',
             'kode_pos' => '40135',
             'address' => 'Jl. Cemara No. 1',
         ]);
@@ -31,7 +32,8 @@ class AddressSeeder extends Seeder
             'kota_kabupaten' => 'Jakarta Selatan',
             'kecamatan' => 'Setiabudi',
             'kelurahan_desa' => 'Karet',
-            'rt_rw' => '03/05',
+            'rt' => '03',
+            'rw' => '05',
             'kode_pos' => '12920',
             'address' => 'Jl. Sudirman No. 2',
         ]);
