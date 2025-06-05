@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\CustomizeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DecorationController;
+use App\Http\Controllers\UserController;
 
 // ADMIN
 
@@ -20,7 +21,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // Snack Export/Import
     Route::get('/snack/export', [SnackController::class, 'export'])->name('snack.export');
     Route::post('/snack/import', [SnackController::class, 'import'])->name('snack.import');
-
     // Snack Recycle Bin
     Route::get('/snack/trash', [SnackController::class, 'trash'])->name('snack.trash');
 
@@ -62,7 +62,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::delete('/collection/{id}/force-delete', [CollectionController::class, 'forceDelete'])->name('collection.force-delete');
 
     // Resource routes
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('snack', SnackController::class);
     Route::resource('decoration', DecorationController::class);
     Route::resource('collection', CollectionController::class);
@@ -85,6 +86,9 @@ Route::middleware('auth', 'verified')->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/mysterybox', function() {
         return view('mysterybox');
+    });
+    Route::get('/profile', function () {
+      return view('coba');
     });
 });
 
