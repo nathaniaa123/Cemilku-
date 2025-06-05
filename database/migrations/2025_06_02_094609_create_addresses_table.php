@@ -19,11 +19,15 @@ return new class extends Migration
             $table->string('kota_kabupaten');
             $table->string('kecamatan');
             $table->string('kelurahan_desa');
-            $table->string('rt_rw');
+            $table->string('rt');
+            $table->string('rw');
             $table->string('kode_pos');
             $table->text('address');
             $table->boolean('is_primary')->default(false); // alamat utama
             $table->timestamps();
+            $table->softDeletes();
+            $table->string('receiver_name')->nullable();
+            $table->string('phone_number')->nullable();
         });
     }
 

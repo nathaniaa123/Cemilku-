@@ -74,7 +74,7 @@ public function update(Request $request, Snack $snack)
     return redirect()->route('admin.snack.index')->with('success', 'Snack diperbarui!');
 }
 
-    
+
 public function destroy(Snack $snack)
 {
     $snack->delete();
@@ -101,6 +101,35 @@ public function import(Request $request)
 public function show($id)
 {
     return redirect()->route('admin.snack.index');
+}
+
+// Menampilkan semua snack yang sudah dihapus
+public function trash()
+{
+    $trashedSnacks = Snack::onlyTrashed()->get(); // Ambil data snack yang di-soft delete
+    return view('admin.snack.trash', compact('trashedSnacks'));
+}
+
+// Restore soft-deleted snack
+public function restore($id)
+{
+    $snack = Snack::withTrashed()->findOrFail($id);
+    $snack->restore();
+    return redirect()->route('admin.snack.trash')->with('success', 'Snack berhasil dipulihkan.');
+}
+
+// Hapus permanen snack
+public function forceDelete($id)
+{
+    $snack = Snack::withTrashed()->findOrFail($id);
+    $snack->forceDelete();
+    return redirect()->route('admin.snack.trash')->with('success', 'Snack berhasil dihapus permanen.');
+}
+
+public function restoreAll()
+{
+    Snack::onlyTrashed()->restore();
+    return redirect()->route('admin.snack.trash')->with('success', 'Semua snack berhasil direstore.');
 }
 
 

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('decoration_id_1')->nullable()->constrained('decorations')->nullOnDelete();
             $table->foreignId('decoration_id_2')->nullable()->constrained('decorations')->nullOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

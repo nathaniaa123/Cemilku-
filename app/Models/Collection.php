@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Collection extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'name', 'type', 'description', 'price', 'stock', 'image',
         'snack_id_1', 'snack_id_2', 'snack_id_3', 'snack_id_4', 'layer'
