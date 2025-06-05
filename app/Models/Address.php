@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Address extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'user_id',
         'label',
@@ -14,11 +17,15 @@ class Address extends Model
         'kota_kabupaten',
         'kecamatan',
         'kelurahan_desa',
-        'rt_rw',
+        'rt',
+        'rw',
         'kode_pos',
         'address',
-        'is_primary', // jika kamu pakai field ini
+        'is_primary',
+        'receiver_name',
+        'phone_num'
     ];
+
 
     public function user()
     {
