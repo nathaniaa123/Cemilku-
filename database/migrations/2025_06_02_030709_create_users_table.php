@@ -14,11 +14,20 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->date('birth_date');
+            $table->string('phone_num')->unique()->nullable();
+            $table->integer('role')->default(1);
+            $table->string('profile_path')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('phone_number')->nullable();
+            $table->date('date_of_birth')->nullable();
+            //ini gw hapus kenapa, karena bisa bikin circular foreign key, susah di migrate
+            // $table->foreignId('address_id')->nullable()->constrained('addresses')->nullOnDelete();
+            $table->string('profile_picture')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
