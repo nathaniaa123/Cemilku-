@@ -4,9 +4,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use PHPUnit\Framework\Attributes\Group;
+use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SnackController;
 use App\Http\Controllers\admin\CustomizeController;
@@ -77,7 +76,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
-Auth::routes(['verify'=>true]);
+Auth::routes(['verify' => true]);
 
 Route::get('/auth-google-redirect', [RegisterController::class, 'google_redirect'])->name('google-redirect');
 Route::get('/auth-google-callback', [RegisterController::class, 'google_callback'])->name('google-callback');
