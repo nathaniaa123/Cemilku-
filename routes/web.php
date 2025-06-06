@@ -72,7 +72,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 });
 
 
-
+// HOMEPAGE
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
@@ -81,13 +81,14 @@ Auth::routes(['verify' => true]);
 Route::get('/auth-google-redirect', [RegisterController::class, 'google_redirect'])->name('google-redirect');
 Route::get('/auth-google-callback', [RegisterController::class, 'google_callback'])->name('google-callback');
 
-Route::middleware('auth', 'verified')->group(function(){
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/mysterybox', function() {
-        return view('mysterybox');
+    Route::get('/mysterybox', function () {
+        $mode = 'Budget';
+        return view('mysterybox', compact('mode'));
     });
     Route::get('/profile', function () {
-      return view('coba');
+        return view('coba');
     });
 });
 
@@ -97,3 +98,34 @@ use App\Http\Controllers\AddressController;
 // Route::middleware(['auth'])->group(function () {
 //     Route::patch('/addresses/{address}/set-primary', [AddressController::class, 'setPrimary'])->name('addresses.setPrimary');
 // });
+
+
+// MYSTERYBOX PAGE
+Route::match(['get', 'post'], '/mysterybox', function (Request $request) {
+    if ($request->isMethod('post')) {
+        // Jika ada POST ke /mysterybox, langsung redirect ke GET /mysterybox
+        return redirect()->route('mysterybox');
+    }
+    $mode = session('mode', 'Budget');
+    $budget = session('budget');
+    $mood = session('mood');
+    return view('mysterybox', compact('mode', 'budget', 'mood'));
+})->name('mysterybox');
+
+Route::post('/set-budget', function (Request $request) {
+    $request->validate(['budget' => 'required']);
+    session(['budget' => $request->budget, 'mode' => 'Mood']);
+    return redirect()->route('mysterybox');
+})->name('set-budget');
+
+Route::post('/set-mood', function (Request $request) {
+    $request->validate(['mood' => 'required']);
+    session(['mood' => $request->mood, 'mode' => 'Done']);
+    return redirect()->route('mysterybox');
+})->name('set-mood');
+
+Route::post('/reset-session', function () {
+    session()->forget(['budget', 'mood', 'mode']);
+    return response()->json(['status' => 'reset']);
+})->name('reset-session');
+
