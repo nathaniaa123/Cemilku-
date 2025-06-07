@@ -12,7 +12,9 @@ use App\Http\Controllers\admin\CustomizeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DecorationController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
+
+// use App\Http\Controllers\UserController;
 
 // ADMIN
 
@@ -61,8 +63,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::delete('/collection/{id}/force-delete', [CollectionController::class, 'forceDelete'])->name('collection.force-delete');
 
     // Resource routes
-//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('snack', SnackController::class);
     Route::resource('decoration', DecorationController::class);
     Route::resource('collection', CollectionController::class);
@@ -83,22 +85,19 @@ Route::get('/auth-google-callback', [RegisterController::class, 'google_callback
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('user', UserController::class);
+    Route::resource('address', AddressController::class);
+    Route::get('/profile', [UserController::class, 'index'])->name('profile');
     Route::get('/mysterybox', function () {
         $mode = 'Budget';
         return view('mysterybox', compact('mode'));
     });
-    Route::get('/profile', function () {
-        return view('coba');
-    });
 });
 
-// Address
-use App\Http\Controllers\AddressController;
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::patch('/addresses/{address}/set-primary', [AddressController::class, 'setPrimary'])->name('addresses.setPrimary');
 // });
-
 
 // MYSTERYBOX PAGE
 Route::match(['get', 'post'], '/mysterybox', function (Request $request) {
@@ -128,4 +127,3 @@ Route::post('/reset-session', function () {
     session()->forget(['budget', 'mood', 'mode']);
     return response()->json(['status' => 'reset']);
 })->name('reset-session');
-
