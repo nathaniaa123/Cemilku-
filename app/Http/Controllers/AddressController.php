@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AddressController extends Controller
 {
+
+    public function search(Request $request){
+        $address = Address::where('label', 'like %', $request->addressSearch.'%')->get();
+
+        return view('coba', compact('address'));
+    }
     /**
      * Display a listing of the resource.
      */
@@ -29,14 +36,19 @@ class AddressController extends Controller
     public function store(Request $request)
     {
         Address::create([
+            'user_id' => Auth::user()->id,
+            'label' => $request->input('label'),
             'provinsi' => $request->input('provinsi'),
             'kota_kabupaten' => $request->input('kota_kabupaten'),
             'kecamatan' => $request->input('kecamatan'),
             'kelurahan_desa' => $request->input('kelurahan_desa'),
-            'rt_rw' => $request->input('rt_rw'),
+            'rt' => $request->input('rt'),
+            'rw' => $request->input('rw'),
             'kode_pos' => $request->input('kode_pos'),
             'address' => $request->input('address'),
         ]);
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -68,6 +80,10 @@ class AddressController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $address = Address::findOrFail($id);
+
+        $address->delete();
+
+        return redirect()->route('user.index');
     }
 }

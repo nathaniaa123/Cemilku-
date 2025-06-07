@@ -6,14 +6,16 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\Framework\Attributes\Group;
 use App\Http\Controllers\HomeController;
-// use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SnackController;
 use App\Http\Controllers\admin\CustomizeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DecorationController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
+
+// use App\Http\Controllers\UserController;
 
 // ADMIN
 
@@ -62,8 +64,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::delete('/collection/{id}/force-delete', [CollectionController::class, 'forceDelete'])->name('collection.force-delete');
 
     // Resource routes
-//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('snack', SnackController::class);
     Route::resource('decoration', DecorationController::class);
     Route::resource('collection', CollectionController::class);
@@ -84,18 +86,14 @@ Route::get('/auth-google-callback', [RegisterController::class, 'google_callback
 
 Route::middleware('auth', 'verified')->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('user', UserController::class);
+    Route::resource('address', AddressController::class);
     Route::get('/mysterybox', function() {
         return view('mysterybox');
     });
-
+    Route::get('/profile', [UserController::class, 'index'])->name('profile');
 });
 
-Route::get('/profile', function () {
-      return view('coba');
-});
-
-// Address
-use App\Http\Controllers\AddressController;
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::patch('/addresses/{address}/set-primary', [AddressController::class, 'setPrimary'])->name('addresses.setPrimary');
