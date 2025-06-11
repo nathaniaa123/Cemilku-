@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset("css/homepage.css")}}">
@@ -15,6 +16,13 @@
     <nav
         class="navbar navbar-expand-sm navbar-light color_primary"
     >
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href= "{{ asset ('css/index.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm color-primary">
+
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button
@@ -79,9 +87,14 @@
         </div>
     </nav>
 
+
    <div
     class="container p-5">
      {{-- <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="container">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+
         <ol class="carousel-indicators">
             <li
                 data-bs-target="#carouselId"
@@ -104,21 +117,32 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <img
+
                     src="holder.js/900x500/auto/#777:#555/text:First slide"
+
+                    src="https://tse1.mm.bing.net/th?id=OIP._KWRVcKHI2mwTNWaA8sSzAHaHa&pid=Api&P=0&h=180"
+
                     class="w-100 d-block"
                     alt="First slide"
                 />
             </div>
             <div class="carousel-item">
                 <img
+
                     src="https://images.harpersbazaar.co.id/unsafe/0x0/smart/media/body_1ff8f87fe81043029c09fb4a1b0e1ec6.jpg"
+
+                    src="https://tse4.mm.bing.net/th?id=OIP.KpPfhvQunJJQEGI8nqTAYwAAAA&pid=Api&P=0&h=180"
+
                     class="w-100 d-block"
                     alt="Second slide"
                 />
             </div>
             <div class="carousel-item">
                 <img
+
                     src="holder.js/900x500/auto/#666:#444/text:Third slide"
+                    src="https://tse2.mm.bing.net/th?id=OIP.nMehbdiEkTAB18FqpUPGfQHaH-&pid=Api&P=0&h=180"
+
                     class="w-100 d-block"
                     alt="Third slide"
                 />
@@ -142,7 +166,11 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+
     </div> --}}
+
+
+    </div>
 
     <!-- Modal trigger button -->
     <button
@@ -153,6 +181,7 @@
     >
         Launch
     </button>
+
 
 
         <div class="row">
@@ -252,6 +281,7 @@
 
     </div>
 
+
     <!-- Modal Body -->
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
     <div
@@ -303,6 +333,7 @@
             options,
         );
     </script>
+
    </div>
 
 
@@ -315,5 +346,122 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
 </script>
 
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                >
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+            >
+                <div class="accordion-body">
+                    This is the first item's accordion body.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row bg-danger">
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" aria-hidden="true">
+        <img
+            class="card-img-top"
+            src="holder.js/100x180/"
+            alt="Some text"
+        />
+        <div class="card-body">
+            <h5
+                class="card-title placeholder"
+            >
+                <span class="placeholder col-6">Oreo</span>
+            </h5>
+            <p
+                class="card-text placeholder"
+            >
+                <span class="placeholder col-7">Good time</span>
+                <span class="placeholder col-4">Kalpa</span>
+                <span class="placeholder col-4">Goriorio</span>
+                <span class="placeholder col-6">Hello Panda</span>
+                <span class="placeholder col-8">Nextar</span>
+            </p>
+            <a
+                href="#"
+                tabindex="-1"
+                class="btn btn-primary disabled placeholder col-6"
+                >70.000</a
+            >
+        </div>
+    </div>
+    </div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
 </html>
