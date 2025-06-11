@@ -11,6 +11,22 @@ Route::get('/index', function(){
     return view('index');
 });
 
+Route::get('/homepage', function(){
+    return view('homepage');
+})-> name('homepage');
+
+Route::get('/custom', function(){
+    return view('custom');
+})->name('custom');
+
+Route::get('/collections', function(){
+    return view('collections');
+})->name('collections');
+
+Route::get('/order', function(){
+    return view('order');
+})->name('order');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
