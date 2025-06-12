@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\OrderController;
@@ -13,8 +14,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DecorationController;
 use App\Http\Controllers\AddressController;
-
-// use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController;
 
 // ADMIN
 
@@ -72,6 +72,24 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('user', UserController::class);
     Route::resource('customize', CustomizeController::class);
 });
+
+Route::get('/homepage', function(){
+    return view('homepage');
+})-> name('homepage');
+
+Route::get('/custom', function(){
+    return view('custom');
+})->name('custom');
+
+Route::get('/collections', function(){
+    return view('collections');
+})->name('collections');
+
+Route::get('/order', function(){
+    return view('order');
+})->name('order');
+
+Auth::routes();
 
 
 // HOMEPAGE
