@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DecorationController;
 use App\Http\Controllers\AddressController;
 
-// use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController;
 
 // ADMIN
 
