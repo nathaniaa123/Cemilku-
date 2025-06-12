@@ -2,6 +2,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+<<<<<<< HEAD
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -18,12 +19,30 @@
 
     <script src="{{ asset('javascript/languange_swithcer.js') }}"></script>
 
+=======
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+>>>>>>> c2813c6a99c29391f2613bfec4bba03146304670
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+<<<<<<< HEAD
     <nav class="navbar fixed-top navbar-expand-sm navbar-light color_primary">
         <div class="container-fluid ps-3 pe-3 align-items-center justify-content-between">
+=======
+</head>
+
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light color_primary">
+        <div class="container-fluid ps-3 pe-5 align-items-center justify-content-between">
+>>>>>>> c2813c6a99c29391f2613bfec4bba03146304670
 
             {{-- LOGO --}}
 
@@ -97,6 +116,7 @@
 
             </div>
 
+<<<<<<< HEAD
 
 
 
@@ -107,10 +127,19 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> --}}
+=======
+>>>>>>> c2813c6a99c29391f2613bfec4bba03146304670
         </div>
 
     </nav>
 
+<<<<<<< HEAD
+=======
+    <script src="{{ asset('javascript/languange_swithcer.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+    </script>
+>>>>>>> c2813c6a99c29391f2613bfec4bba03146304670
 
 </body>
 

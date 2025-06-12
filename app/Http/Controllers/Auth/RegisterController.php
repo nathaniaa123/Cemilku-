@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -50,6 +52,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'birth_date' => 'required',
+            'phone_num' => ['required', 'numeric', 'digits_between:10,12'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,7 +70,31 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'birth_date' => $data['birth_date'],
+            'phone_num' => $data['phone_num'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function google_redirect(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function google_callback(){
+        $googleUser = Socialite::driver('google')->user();
+        $user = User::whereEmail($googleUser->email)->first();
+
+        if(!$user){
+            $user = User::create([
+                'name' => $googleUser->name,
+                'email' => $googleUser->email,
+                'birth_date' => now(),
+                'profile_path' => $googleUser->avatar,
+                'password' => Hash::make('User1234'),
+            ]);
+        }
+
+        Auth::login($user);
+        return redirect()->route('home');
     }
 }

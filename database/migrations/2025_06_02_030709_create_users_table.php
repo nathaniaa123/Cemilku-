@@ -19,6 +19,14 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('phone_number')->unique()->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('gender')->nullable();
+            $table->boolean('is_primary')->default(true);
+            //ini gw hapus kenapa, karena bisa bikin circular foreign key, susah di migrate
+            // $table->foreignId('address_id')->nullable()->constrained('addresses')->nullOnDelete();
+            $table->string('profile_picture')->nullable();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
