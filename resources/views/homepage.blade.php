@@ -1,6 +1,8 @@
 @extends('masterNav')
 
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
     {{-- BAGIAN CAROUSEL AWAL --}}
     {{-- Carousel Banner --}}
     <section id="banner" class="d-flex justify-content-center align-items-center ps-5 pe-5 "style="padding-top: 150px;">
@@ -67,7 +69,7 @@
     {{-- desktop view --}}
     <div class="container mt-custom d-none d-lg-block">
         <div class="row text-center">
-            <a href="/" class="col-lg-4">
+            <a href="/mysterybox" class="col-lg-4">
                 <div class="snack-card" onmouseover="setActive(this)">
                     <img src="assets/bannerSM.png" class="img-fluid" alt="snackMystery">
                     {{-- <button class="btn btn-primary image-button">Customize ></button> --}}
