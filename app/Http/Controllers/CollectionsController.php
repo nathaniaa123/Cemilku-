@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\CartItems;
 use App\Models\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CollectionsController extends Controller
@@ -37,14 +39,41 @@ class CollectionsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'collection_id' => 'required|exists:collections,id',
+            'quantity' => 'required|integer|min:1',
+            'price' => 'required|numeric|min:0',
+        ]);
+
+        $collection = Collection::findOrFail($request->collection_id);
+
+        if ($request->quantity > $collection->stock) {
+            return redirect()->back()->with('error', 'Quantity melebihi stok yang tersedia.');
+        }
+
+        $userId = Auth::user()->id;
+
+        // Cari cart aktif milik user
+        $cart = Cart::where('user_id', $userId)->where('is_active', true)->first();
+
+        // Jika tidak ada, buat cart baru
+        if (!$cart) {
+            $cart = Cart::create([
+                'user_id' => $userId,
+                'is_active' => true,
+            ]);
+        }
+
+        // Simpan item ke cart
         $cartItem = new CartItem();
+        $cartItem->cart_id = $cart->id;
         $cartItem->collection_id = $request->collection_id;
         $cartItem->quantity = $request->quantity;
         $cartItem->price = $request->price;
         $cartItem->total_price = $request->quantity * $request->price;
         $cartItem->save();
 
-        return redirect('#');
+        return redirect()->route('detail.show', ['id' => $request->collection_id])->with('success', true);
     }
 
     /**

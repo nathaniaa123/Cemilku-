@@ -86,9 +86,8 @@ Route::get('/collections', [CollectionsController::class, 'index'])->name('colle
 //     return view('detail');
 // })->name('detail');
 
-// Blom ada id jadi gabisa jalan shownya
 Route::get('/collections/detail/{id}', [CollectionsController::class, 'show'])->name('detail.show');
-// Route::post('/detail', [CollectionsController::class, 'store'])->name('collections.store');
+Route::post('/collections/detail/{id}', [CollectionsController::class, 'store'])->name('collections.store');
 
 Route::get('/order', function(){
     return view('order');
