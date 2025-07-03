@@ -28,6 +28,11 @@
                     class="d-inline-block align-text-top" />
             </a>
 
+            {{-- Navbar Toggler for Mobile --}}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             {{-- NAVBAR BAGIAN TENGAH --}}
             <div class="collapse navbar-collapse justify-content-center align-items-center d-flex nav-tengah"
                 id="collapsibleNavId">
@@ -96,13 +101,14 @@
 
     </nav>
 
+
     <script src="{{ asset('javascript/languange_swithcer.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
-
 </body>
 
 <div>
     @yield('content')
 </div>
+
