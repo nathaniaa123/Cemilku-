@@ -32,7 +32,7 @@
                         <div class="d-flex justify-content-between">
                             <a href="#" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="{{ assets($item->image) }}" alt="{{ $item->name }}" />
+                                    <img class="card-img-top p-2" src="" alt="{{ $item->name }}" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
