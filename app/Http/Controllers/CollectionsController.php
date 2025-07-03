@@ -14,7 +14,10 @@ class CollectionsController extends Controller
      */
     public function index()
     {
-        //
+        $collection = Collection::all();
+        $cny = Collection::where('type', 'jedi')->limit(4)->get();
+
+        return view('collections', compact('collection'));
     }
 
     /**

@@ -82,9 +82,7 @@ Route::get('/custom', function(){
     return view('custom');
 })->name('custom');
 
-Route::get('/collections', function(){
-    return view('collections');
-})->name('collections');
+Route::get('/collections', [CollectionsController::class, 'index'])->name('collections');
 
 Route::get('/detail', function(){
     return view('detail');

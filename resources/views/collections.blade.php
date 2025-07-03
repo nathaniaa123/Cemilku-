@@ -27,27 +27,28 @@
         {{-- CARD DESIGN --}}
         <div class="mt-1">
             <div class="row">
-                <div class="col-md-3 pb-3 col-6">
-                    <div class="d-flex justify-content-between">
-                        <div class="card text-white bg-light p-1">
-                            <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
-                            <h4 class="card-title">Sweet Cemilku</h4>
-                            <p class="card-subtitle">Snack Tower</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-price">Rp 554.000</h5>
-                                <div>
-                                    <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                        style="width: 50px; height: 50px;">+</button>
+                @foreach ($collection as $item)
+                        <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <div class="card text-white bg-light p-1">
+                                <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                <h4 class="card-title">{{$item->name}}</h4>
+                                <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="card-price">{{ $item->price }}</h5>
+                                    <div>
+                                        <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                            style="width: 50px; height: 50px;">+</button>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                @endforeach
 
 
-                </div>
-
-                <div class="col-md-3 pb-3 col-6">
+                {{-- <div class="col-md-3 pb-3 col-6">
                     <div class="d-flex justify-content-between">
                         <div class="card text-white bg-light p-1">
                             <img class="card-img-top p-2" src="assets/Eid_Tower1.png" alt="Title" />
@@ -105,7 +106,7 @@
                     </div>
 
 
-                </div>
+                </div> --}}
 
                 {{-- DIVIDER RAMADHAN --}}
                 <div class="d-flex align-items-center my-4">
