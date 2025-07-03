@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
@@ -20,7 +21,79 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light color_primary">
+        <div class="container-fluid ps-3 pe-5 align-items-center justify-content-between">
+
+            {{-- LOGO --}}
+
+            {{-- NAVBAR BAGIAN KIRI --}}
+            <a class="navbar-brand" href="#">
+                <img src="assets/logoCemilku.png" alt="Logo" width="130" height="75"
+                    class="d-inline-block align-text-top" />
+            </a>
+
+            {{-- NAVBAR BAGIAN TENGAH --}}
+            <div class="collapse navbar-collapse justify-content-center align-items-center d-flex nav-tengah"
+                id="collapsibleNavId">
+                <ul class="navbar-nav mt-2 mt-lg-0 fs-3">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}" href="homepage"
+                            aria-current="page">Home
+                            <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('custom') ? 'active' : '' }}">
+                        <a class="nav-link" href="custom"> Custom</a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('collections') ? 'active' : '' }}">
+                        <a class="nav-link" href="collections">Collections</a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('order') ? 'active' : '' }}">
+                        <a class="nav-link" href="order">Order</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            {{-- NAVBAR BAGIAN KANAN --}}
+            <div class="container justify-content-end align-items-center d-flex gap-2">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-cart3 fs-1" style="color: #341c02;"></i>
+                </a>
+
+
+                <div class="dropdown_languange  dropdown d-inline-block">
+                    <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img id="flag-icon" src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="rounded-circle"
+                            width="40" height="40" style="object-fit: fill">
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li> <a class="dropdown-item" href="#" onclick="setLanguage('id')">Indonesia</a> </li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('eng')">English</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="dropdown d-inline-block">
+                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="font-size: 2.5rem; color: #341c02; padding-left:10px">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     CemilKu
@@ -72,7 +145,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4">
             @yield('content')
