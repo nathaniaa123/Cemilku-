@@ -6,7 +6,7 @@
     <script src="{{ asset('js/detail.js') }}"></script>
 
     {{-- BACK BUTTON --}}
-    <div class="d-flex w-100 justify-content-between align-items-center mt-2" style="padding-top: 20px; padding-left: 5vh;">
+    <div class="back-button d-flex w-100 justify-content-between align-items-center" style="padding-top: 10px">
         <a href="/collections" id="backBtn">
             <img src="{{ asset('Asset/mysterybox/arrow_back.png') }}" alt="Back" style="height: 24px;" />
         </a>
@@ -23,18 +23,11 @@
 
             {{-- RIGHT CONTENT --}}
             <div class="col">
-                <div class="subtitle">Chinese New Year</div>
-                <div class="title">CemilKongsi Bouquet</div>
-                <div class="price-tag">Rp 150.000</div>
-                {{-- <div class="title">{{ $detail->name }}</div>
-                <div class="price-tag">{{ $detail->price }}</div> --}}
+                <div class="subtitle">{{ $detail->category }}</div>
+                <div class="title">{{ $detail->name }}</div>
+                <div class="price-tag">Rp {{ number_format($detail->price, 0, ',', '.') }}</div>
                 <div class="description" style="text-align: justify;">
-                    {{-- <p class="card-text">{{ $detail->description }} </p> --}}
-                    Celebrate the Lunar New Year in the most practical and stylish way with the
-                    CemilKongsi Tower! This exclusive snack tower is specially designed for the
-                    special Lunar New Year moments, filled with a selection of favorite sweet and
-                    savory snacks, beautifully arranged in a red and gold themed display — symbols
-                    of luck and prosperity.
+                    <p class="card-text">{{ $detail->description }} </p>
                 <div class="size-label">SIZE</div>
                 <div class="size-value">85,6 cm (H) x 25 cm (W)</div>
 
