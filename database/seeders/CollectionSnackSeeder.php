@@ -10,7 +10,7 @@ class CollectionSnackSeeder extends Seeder
     public function run()
     {
         DB::table('collection_snack')->insert([
-            // CHINESE NEW YEAR
+            // CHINESE NEW YEAR (CNY)
             // Collection 1 - Tower
             ['collection_id' => 1, 'snack_id' => 2, 'quantity' => 10],
             ['collection_id' => 1, 'snack_id' => 5, 'quantity' => 12],
