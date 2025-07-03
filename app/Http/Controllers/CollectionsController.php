@@ -14,10 +14,14 @@ class CollectionsController extends Controller
      */
     public function index()
     {
-        $collection = Collection::all();
-        $cny = Collection::where('type', 'jedi')->limit(4)->get();
+        $cny = Collection::where('category', 'Chinese New Year')->get();
+        $ramadhan = Collection::where('category', 'Ramadhan')->get();
+        $valentine = Collection::where('category', 'Valentine')->get();
+        $christmas = Collection::where('category', 'Christmas')->get();
+        $birthday = Collection::where('category', 'Birthday')->get();
+        $graduation = Collection::where('category', 'Graduation')->get();
 
-        return view('collections', compact('collection'));
+        return view('collections', compact('cny', 'ramadhan', 'valentine', 'christmas', 'birthday', 'graduation'));
     }
 
     /**

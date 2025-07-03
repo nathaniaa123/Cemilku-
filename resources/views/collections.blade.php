@@ -27,86 +27,59 @@
         {{-- CARD DESIGN --}}
         <div class="mt-1">
             <div class="row">
-                @foreach ($collection as $item)
-                        <div class="col-md-3 pb-3 col-6">
+                @foreach ($cny as $item)
+                    <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <div class="card text-white bg-light p-1">
-                                <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
-                                <h4 class="card-title">{{$item->name}}</h4>
-                                <p class="card-subtitle">Snack {{ $item->type }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="card-price">{{ $item->price }}</h5>
-                                    <div>
-                                        <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                            style="width: 50px; height: 50px;">+</button>
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="" alt="{{ $item->name }}" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
 
 
-                {{-- <div class="col-md-3 pb-3 col-6">
-                    <div class="d-flex justify-content-between">
-                        <div class="card text-white bg-light p-1">
-                            <img class="card-img-top p-2" src="assets/Eid_Tower1.png" alt="Title" />
-                            <h4 class="card-title">Ramadhan Cemilku</h4>
-                            <p class="card-subtitle">Snack Tower</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-price">Rp 435.600</h5>
-                                <div>
-                                    <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                        style="width: 50px; height: 50px;">+</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                {{-- DIVIDER VALENTINE --}}
+                <div class="d-flex align-items-center my-4">
+                    <hr class="flex-grow-1" style="border-color: #52282A;">
+                    <span class="mx-3 fs-3" style="color: #52282A">Valentine Edition</span>
+                    <hr class="flex-grow-1">
                 </div>
 
-                <div class="col-md-3 pb-3 col-6">
-                    <div class="d-flex justify-content-between">
-                        <div class="card text-white bg-light p-1">
-                            <img class="card-img-top p-2" src="assets/cny_Tower1.png" alt="Title" />
-                            <h4 class="card-title">Kionghi Cemilku</h4>
-                            <p class="card-subtitle">Snack Tower</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-price">Rp 342.000</h5>
-                                <div>
-                                    <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                        style="width: 50px; height: 50px;">+</button>
 
+                {{-- VALENTINE --}}
+                @foreach ($valentine as $item)
+                    <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
-
-
-                </div>
-
-                <div class="col-md-3 pb-3 col-6">
-                    <div class="d-flex justify-content-between">
-                        <div class="card text-white bg-light p-1">
-                            <img class="card-img-top p-2" src="assets/hbd_Tower1.png" alt="Title" />
-                            <h4 class="card-title">Birthday Cemilku</h4>
-                            <p class="card-subtitle">Snack Tower</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-price">Rp 324.000</h5>
-                                <div>
-                                    <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                        style="width: 50px; height: 50px;">+</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div> --}}
+                @endforeach
 
                 {{-- DIVIDER RAMADHAN --}}
                 <div class="d-flex align-items-center my-4">
@@ -115,31 +88,124 @@
                     <hr class="flex-grow-1">
                 </div>
 
-                <div class="col-md-3 pb-3 col-6">
-                    <div class="d-flex justify-content-between">
-                        <div class="card text-white bg-light p-1">
-                            <img class="card-img-top p-2" src="assets/hbd_Tower1.png" alt="Title" />
-                            <h4 class="card-title">Birthday Cemilku</h4>
-                            <p class="card-subtitle">Snack Tower</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-price">Rp 304.500</h5>
-                                <div>
-                                    <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
-                                        style="width: 50px; height: 50px;">+</button>
 
+                {{-- RAMADHAN --}}
+                @foreach ($ramadhan as $item)
+                    <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
+                @endforeach
 
 
+                {{-- DIVIDER CHRISTMAS --}}
+                <div class="d-flex align-items-center my-4">
+                    <hr class="flex-grow-1" style="border-color: #52282A;">
+                    <span class="mx-3 fs-3" style="color: #52282A">Christmas Edition</span>
+                    <hr class="flex-grow-1">
                 </div>
 
 
+                {{-- CHRISTMAS --}}
+                @foreach ($christmas as $item)
+                    <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+
+                {{-- DIVIDER BIRTHDAY --}}
+                <div class="d-flex align-items-center my-4">
+                    <hr class="flex-grow-1" style="border-color: #52282A;">
+                    <span class="mx-3 fs-3" style="color: #52282A">Birthday Edition</span>
+                    <hr class="flex-grow-1">
+                </div>
 
 
+                {{-- BIRTHDAY --}}
+                @foreach ($birthday as $item)
+                    <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
 
 
+                {{-- DIVIDER GRADUATION --}}
+                <div class="d-flex align-items-center my-4">
+                    <hr class="flex-grow-1" style="border-color: #52282A;">
+                    <span class="mx-3 fs-3" style="color: #52282A">Graduation Edition</span>
+                    <hr class="flex-grow-1">
+                </div>
+
+
+                {{-- GRADUATION --}}
+                @foreach ($birthday as $item)
+                    <div class="col-md-3 pb-3 col-6">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="card text-white bg-light p-1">
+                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-subtitle">Snack {{ $item->type }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
+                                        <div>
+                                            <button class="btn btn-custom rounded-circle fw-bold fs-4 d-none d-sm-inline"
+                                                style="width: 50px; height: 50px;" onclick="event.stopPropagation();">+</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 
