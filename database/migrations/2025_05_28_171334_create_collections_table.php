@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('collections', function (Blueprint $table) {
             $table->id();
-            $table->enum('category', ['Chinese New Year, Valentine, Ramadhan, Christmas, Birthday, Graduation']);
+            $table->enum('category', ['Chinese New Year', 'Valentine', 'Ramadhan', 'Christmas', 'Birthday', 'Graduation']);
             $table->string('name');
             $table->enum('type', ['tower', 'bouquet']);
             $table->text('description')->nullable();
