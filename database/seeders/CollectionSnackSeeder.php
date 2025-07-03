@@ -16,6 +16,7 @@ class CollectionSnackSeeder extends Seeder
 
             ['collection_id' => 2, 'snack_id' => 3, 'quantity' => 1], // SilverQueen
             ['collection_id' => 2, 'snack_id' => 4, 'quantity' => 2], // Tango
+            ['collection_id' => 2, 'snack_id' => 1, 'quantity' => 2], // Tango
         ]);
     }
 }

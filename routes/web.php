@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CollectionsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -85,6 +86,13 @@ Route::get('/collections', function(){
     return view('collections');
 })->name('collections');
 
+Route::get('/detail', function(){
+    return view('detail');
+})->name('detail');
+
+Route::get('/detail/{id}', [CollectionsController::class, 'show'])->name('detail.show');
+// Route::post('/detail', [CollectionsController::class, 'store'])->name('collections.store');
+
 Route::get('/order', function(){
     return view('order');
 })->name('order');
@@ -128,7 +136,6 @@ Route::match(['get', 'post'], '/mysterybox', function (Request $request) {
     $mood = session('mood');
     return view('mysterybox', compact('mode', 'budget', 'mood'));
 })->name('mysterybox');
-
 Route::post('/set-budget', function (Request $request) {
     $request->validate(['budget' => 'required']);
     session(['budget' => $request->budget, 'mode' => 'Mood']);

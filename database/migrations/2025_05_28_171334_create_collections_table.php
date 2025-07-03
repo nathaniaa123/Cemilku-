@@ -19,15 +19,14 @@ return new class extends Migration
             $table->decimal('price', 10, 2)->default(0);
             $table->integer('stock')->default(0);
             $table->string('image')->nullable();
-            $table->foreignId('snack_id_1')->nullable()->constrained('snacks')->nullOnDelete();
-            $table->foreignId('snack_id_2')->nullable()->constrained('snacks')->nullOnDelete();
-            $table->foreignId('snack_id_3')->nullable()->constrained('snacks')->nullOnDelete();
-            $table->foreignId('snack_id_4')->nullable()->constrained('snacks')->nullOnDelete();
+            // $table->foreignId('snack_id_1')->nullable()->constrained('snacks')->nullOnDelete();
+            // $table->foreignId('snack_id_2')->nullable()->constrained('snacks')->nullOnDelete();
+            // $table->foreignId('snack_id_3')->nullable()->constrained('snacks')->nullOnDelete();
+            // $table->foreignId('snack_id_4')->nullable()->constrained('snacks')->nullOnDelete();
             $table->enum('layer', [2, 3, 4]);
             $table->timestamps();
             $table->softDeletes();
         });
-
 
     }
 
