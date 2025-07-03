@@ -62,7 +62,7 @@
                 @foreach ($valentine as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="#" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
@@ -93,7 +93,7 @@
                 @foreach ($ramadhan as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="#" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
@@ -125,7 +125,7 @@
                 @foreach ($christmas as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="#" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
@@ -156,7 +156,7 @@
                 @foreach ($birthday as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="#" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
@@ -188,7 +188,7 @@
                 @foreach ($birthday as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="#" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
