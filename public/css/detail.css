@@ -5,7 +5,7 @@ body {
     margin-top: 10vh;
 }
 
-.back_button {
+.back-button {
     padding-top: 60px;
     padding-left: 5vh;
 }
@@ -76,7 +76,7 @@ body {
     align-items: center;
     color: #52282A;
     gap: 20px;
-    padding-top: 8vh;
+    padding-top: 12.5vh;
 }
 
 .quantity-label {
@@ -137,6 +137,11 @@ input::-webkit-inner-spin-button {
     .col {
         padding-left: 25px;
         padding-right: 25px;
+        padding-bottom: 20px;
+    }
+
+    .back-button {
+        padding-left: 2vh;
     }
 
     .container-fluid {
@@ -165,6 +170,7 @@ input::-webkit-inner-spin-button {
 
     .subtitle {
         font-size: 0.9rem;
+        padding-top: 0;
     }
 
     .title {
@@ -185,6 +191,7 @@ input::-webkit-inner-spin-button {
 
     .size-label {
         font-size: 1rem;
+        padding-top: 0;
     }
 
     .size-value {
