@@ -54,7 +54,7 @@
 
                     <!-- Logo (mobile) diluar burger -->
                     <div class="d-block mb-3 text-center ms-2">
-                        <img src="assets/logo.png" alt="Logo" width="55" height="42"
+                        <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="55" height="42"
                             style="display: block; position: relative; top:7px" />
                     </div>
 
@@ -63,7 +63,7 @@
 
                 {{-- Desktop Logo --}}
                 <a class="navbar-brand d-none d-sm-block m-4 p-2" href="#">
-                    <img src="assets/logo.png" alt="Logo" width="65" height="50"
+                    <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="65" height="50"
                         class="d-inline-block align-text-top" />
                 </a>
 
@@ -74,19 +74,19 @@
                     <ul class="navbar-nav fs-5 flex-row gap-1">
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}"
-                                href="homepage">Home</a>
+                                href="{{ route('homepage') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('custom') ? 'active' : '' }}"
-                                href="custom">Custom</a>
+                                href="{{ route('custom') }}">Custom</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('collections') ? 'active' : '' }}"
-                                href="collections">Collections</a>
+                            <a class="nav-link {{ request()->routeIs('collections*') ? 'active' : '' }}"
+                                href="{{ route('collections') }}">Collections</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('order') ? 'active' : '' }}"
-                                href="order">Order</a>
+                                href="{{ route('order') }}">Order</a>
                         </li>
                     </ul>
                 </div>
@@ -104,7 +104,7 @@
 
                         <!-- Logo (mobile) dalem burger -->
                         <div class="logo-burger d-block d-sm-none mb-3 ">
-                            <img src="assets/logo.png" alt="Logo" width="60" height="45" />
+                            <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="60" height="45" />
                         </div>
 
                         <!-- Menu -->
@@ -118,7 +118,7 @@
                                     href="custom">Custom</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('collections') ? 'active' : '' }}"
+                                <a class="nav-link {{ request()->routeIs('collections*') ? 'active' : '' }}"
                                     href="collections">Collections</a>
                             </li>
                             <li class="nav-item">

@@ -30,9 +30,9 @@
                 @foreach ($cny as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="" alt="{{ $item->name }}" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="{{ $item->name }}" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -62,9 +62,9 @@
                 @foreach ($valentine as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -93,9 +93,9 @@
                 @foreach ($ramadhan as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -125,9 +125,9 @@
                 @foreach ($christmas as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -156,9 +156,9 @@
                 @foreach ($birthday as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -185,12 +185,12 @@
 
 
                 {{-- GRADUATION --}}
-                @foreach ($birthday as $item)
+                @foreach ($graduation as $item)
                     <div class="col-md-3 pb-3 col-6">
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('detail.show', $item->id)}}" style="text-decoration: none;">
+                            <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
-                                    <img class="card-img-top p-2" src="assets/Val_Tower1.png" alt="Title" />
+                                    <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
