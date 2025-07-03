@@ -18,7 +18,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'Celebrate togetherness this Chinese New Year with CemilKongsi, a delightful snack set perfect for sharing with family and friends.',
                 'price' => 339000.00,
                 'stock' => 97,
-                'image' => 'assets/images/cny1.png',
+                'image' => 'cny1.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
@@ -29,7 +29,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'Add a burst of excitement to your Imlek festivities with Snackpao, a vibrant tower of snacks combining popular treats and soft bao.',
                 'price' => 355000.00,
                 'stock' => 90,
-                'image' => 'assets/images/cny2.png',
+                'image' => 'cny2.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
@@ -40,7 +40,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'ChoiSnack is a snack set that embodies good fortune and prosperity with carefully curated lucky treats.',
                 'price' => 269000.00,
                 'stock' => 73,
-                'image' => 'assets/images/cny3.png',
+                'image' => 'cny3.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
