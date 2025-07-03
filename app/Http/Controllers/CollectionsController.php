@@ -45,8 +45,8 @@ class CollectionsController extends Controller
      */
     public function show(string $id)
     {
-        $collection = Collection::findOrFail($id);
-        return view('detail', compact('collection'));
+        $detail = Collection::all();
+        return view('detail', compact('detail'));
     }
 
     /**
