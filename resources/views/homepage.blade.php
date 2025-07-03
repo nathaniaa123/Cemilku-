@@ -1,11 +1,13 @@
-@extends('masterNav')
+@extends('layouts.app')
+
+@section('style')
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+@endsection
 
 @section('content')
-
-<link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
     {{-- BAGIAN CAROUSEL AWAL --}}
     {{-- Carousel Banner --}}
-    <section id="banner" class="d-flex justify-content-center align-items-center ps-5 pe-5 "style="padding-top: 150px;">
+    <section id="banner" class="d-flex justify-content-center align-items-center ps-5 pe-5 "style="padding-top: 120px;">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
@@ -91,29 +93,31 @@
     </div>
 
     {{-- mobile view --}}
-    <div class="mt-5 d-block d-lg-none position-relative ms-5 me-5">
+    <div class="mt-5 d-block d-lg-none position-relative ms-3 me-3">
         <div id = "card-carousel" class="d-flex overflow-auto px-2 scroll-snap-x"
             style="scroll-snap-type: mandatory; scroll-padding:0 50%">
 
             {{-- card 1 --}}
+
             <a href="/">
-                <div class="card-body flex-shrink-0 me-5" style="width: 580px; scroll-snap-align:center">
-                    {{-- <button class="btn btn-primary image-button">Customize ></button> --}}
+                <div class="card-body flex-shrink-0 me-1"
+                    style="width: 67.5vw; max-width: 350px; scroll-snap-align:center">
                     <img src="assets/bannerSM.png" class="img-fluid rounded" alt="snackMystery">
                 </div>
             </a>
 
+
             {{-- card 2 --}}
             <a href="/">
-                <div class="card-body flex-shrink-0 me-5" id="second-card"
-                    style="width: 605px; scroll-snap-align:center">
+                <div class="card-body flex-shrink-0 me-1" id="second-card"
+                    style="width: 70vw; max-width: 350px; scroll-snap-align:center">
                     <img src="assets/bannerSB.png" class="img-fluid rounded" alt="snackBouquet">
                 </div>
             </a>
 
             {{-- card 3 --}}
             <a href="/">
-                <div class="card-body flex-shrink-0 me-5" style="width: 577px; scroll-snap-align:center">
+                <div class="card-body flex-shrink-0 me-1" style="width: 67vw; max-width: 350px; scroll-snap-align:center">
                     <img src="assets/bannerST.png" class="img-fluid rounded" alt="snackTower">
                 </div>
             </a>
@@ -124,59 +128,47 @@
     {{-- BAGIAN IMG BULAT BULAT --}}
     <!-- Trending-->
     <div class="mt-5 container-lg">
-        <div class="position-relative d-flex p-0">
-            <div class="w-100">
-                <img class="w-100" src="assets/Group17.png">
+        <div class="product-card-left d-flex justify-content-center align-items-center">
+            <div class="product-image">
+                <img src="assets/Group19.png">
             </div>
-            <div class="position-absolute row w-100 h-100 z-2 d-flex justify-content-end align-items-center">
-                <div class="col-lg-6 col-6"></div>
-                <div class="col-lg-6 col-6">
-                    <p class="product-category">snack tower</p>
-                    <h3 class="product-title">Anniv Delight</h3>
-                    <p class="product-price product-price-1">$ 200</p>
-                </div>
+            <div class="product-info-right top-10 start-50 translate-middle ps-5">
+                <p class="product-category">snack tower</p>
+                <h3 class="product-title">Anniv Delight</h3>
+                <p class="product-price product-price-3">$ 200</p>
             </div>
         </div>
 
-        <div class="position-relative d-flex p-0">
-            <div class="w-100">
-                <img class="w-100" src="assets/Group18bener.png">
+        <div class="product-card-right d-flex justify-content-center align-items-center">
+            <div class="product-info-left top-10 end-45 translate-middle ps-5">
+                <p class="product-category">snack bouquet</p>
+                <h3 class="product-title">Fest Celebration</h3>
+                <p class="product-price product-price-2">$ 100</p>
             </div>
-            <div class="position-absolute w-100 h-100 row z-2 d-flex justify-content-start align-items-center">
-                <div class="col-lg-6 col-6 text-end">
-                    <p class="product-category">snack tower</p>
-                    <h3 class="product-title">Anniv Delight</h3>
-                    <p class="product-price product-price-2">$ 200</p>
-                </div>
-                <div class="col-lg-6 col-6"></div>
+            <div class="product-image">
+                <img src="assets/Group18bener.png">
             </div>
         </div>
 
-        <div class="position-relative d-flex p-0">
-            <div class="w-100">
-                <img class="w-100" src="assets/Group19.png">
+         <div class="product-card-left d-flex justify-content-center align-items-center">
+            <div class="product-image">
+                <img src="assets/Group19.png">
             </div>
-            <div class="position-absolute w-100 h-100 row z-2 d-flex justify-content-end align-items-center">
-                <div class="col-lg-6 col-6"></div>
-                <div class="col-lg-6 col-6">
-                    <p class="product-category">snack tower</p>
-                    <h3 class="product-title">Anniv Delight</h3>
-                    <p class="product-price product-price-3">$ 200</p>
-                </div>
+            <div class="product-info-right top-10 start-50 translate-middle ps-5">
+                <p class="product-category">snack surprise</p>
+                <h3 class="product-title">Happy Combo</h3>
+                <p class="product-price product-price-3">$ 75</p>
             </div>
         </div>
 
-        <div class="position-relative d-flex p-0">
-            <div class="w-100">
-                <img class="w-100" src="assets/Group20bener.png">
+        <div class="product-card-right d-flex justify-content-center align-items-center">
+            <div class="product-info-left top-10 end-45 translate-middle ps-5">
+                <p class="product-category">snack tower</p>
+                <h3 class="product-title">Ultimate Combo</h3>
+                <p class="product-price product-price-4">$ 175</p>
             </div>
-            <div class="position-absolute w-100 h-100 z-2 d-flex justify-content-start align-items-center">
-                <div class="col-lg-6 col-6 text-end">
-                    <p class="product-category">snack tower</p>
-                    <h3 class="product-title">Anniv Delight</h3>
-                    <p class="product-price product-price-4">$ 200</p>
-                </div>
-                <div class="col-lg-6 col-6"></div>
+            <div class="product-image">
+                <img src="assets/Group20bener.png">
             </div>
         </div>
 
@@ -221,11 +213,11 @@
             <div class="col-12 col-lg-4 mb-4">
                 {{-- LOGO --}}
                 <img src="assets/cemilKu_est.png" alt="cemilku_est"
-                    class="img-fluid justify-content-center d-block mx-auto" style="width: 100%; max-width: 500px;">
+                    class=" logo-cemilku img-fluid justify-content-center d-block mx-auto">
 
                 {{-- ABOUT US --}}
                 {{-- THE BENEFIT --}}
-                <div class="ps-4 pt-2 pb-2 pe-2 rounded-5 text-white mb-3 mt-3 me-3 bg-blue title-about-us">
+                <div class="title-about-us ps-4 pt-2 pb-2 pe-2 rounded-5 text-white mb-3 mt-3 me-3 bg-blue">
                     <i class="bi bi-star-fill me-2"></i>
                     <span>The Benefit</span>
                 </div>
@@ -262,14 +254,14 @@
                 {{-- BAGIAN KIRI --}}
                 <div class="row ps-4 pe-2">
                     <div class="col-4 ps-3 ">
-                        <p class="text-justify subtitle-about-us ps-3 mb-1">Customizable</p>
+                        <p class="text-justify subtitle-about-us mb-1">Customizable</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-blue probar-custom " role="progressbar" style="width: 95%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
 
-                        <p class="text-justify subtitle-about-us ps-3 mb-1 pt-3">Affordable</p>
+                        <p class="text-justify subtitle-about-us  mb-1 pt-3">Affordable</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-purple probar-custom" role="progressbar" style="width: 82%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -277,7 +269,7 @@
                             </div>
                         </div>
 
-                        <p class="text-justify  subtitle-about-us ps-3 mb-1 pt-3">Flexible</p>
+                        <p class="text-justify  subtitle-about-us  mb-1 pt-3">Flexible</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-green probar-custom" role="progressbar" style="width: 94%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -288,7 +280,7 @@
 
                     {{-- BAGIAN TENGAH --}}
                     <div class="col-4">
-                        <p class="text-justify subtitle-about-us ps-3 mb-1">Easy</p>
+                        <p class="text-justify subtitle-about-us mb-1">Easy</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-green probar-custom" role="progressbar" style="width: 80%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -296,7 +288,7 @@
                             </div>
                         </div>
 
-                        <p class="text-justify subtitle-about-us ps-3 mb-1 pt-3">Unique</p>
+                        <p class="text-justify subtitle-about-us mb-1 pt-3">Unique</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-pink probar-custom" role="progressbar" style="width: 90%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -304,7 +296,7 @@
                             </div>
                         </div>
 
-                        <p class="text-justify subtitle-about-us ps-3 mb-1 pt-3">Creative</p>
+                        <p class="text-justify subtitle-about-us mb-1 pt-3">Creative</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-purple probar-custom" role="progressbar" style="width: 95%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -316,7 +308,7 @@
 
                     {{-- BAGIAN KANAN --}}
                     <div class="col-4">
-                        <p class="text-justify subtitle-about-us ps-3 mb-1">Personal</p>
+                        <p class="text-justify subtitle-about-us mb-1">Personal</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-purple probar-custom" role="progressbar" style="width: 70%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -324,7 +316,7 @@
                             </div>
                         </div>
 
-                        <p class="text-justify subtitle-about-us ps-3 mb-1 pt-3">Fun</p>
+                        <p class="text-justify subtitle-about-us  mb-1 pt-3">Fun</p>
                         <div class="progress" style="height: 20px; border-radius: 10px;">
                             <div class="progress-bar bg-green probar-custom" role="progressbar" style="width: 75%;"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">

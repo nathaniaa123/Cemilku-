@@ -25,6 +25,14 @@ body {
     text-decoration: 5px underline #52282a;
 }
 
+.navbar {
+    min-height: 70px;
+    height: 70px;
+    transition: height 0.3s ease;
+
+}
+
+
 .mt-custom {
     margin-top: 10rem;
 }
@@ -76,6 +84,7 @@ body {
     font-size: 20px;
     font-weight: 500;
     color: #52282a;
+    padding-left: 3px;
 }
 
 .probar-custom {
@@ -276,6 +285,11 @@ body {
     padding: 0 20px;
 }
 
+.logo-cemilku {
+    width: 100%;
+    max-width: 500px;
+}
+
 
 
 
@@ -301,6 +315,64 @@ body {
 } */
 
 @media (min-width: 360px) and (max-width: 960px) {
+
+    .navbar {
+        height: auto !important;
+    }
+
+    .navbar-collapse {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        color: #52282A;
+    }
+
+
+    .offcanvas-start {
+        width: 80% !important;
+        max-width: 300px;
+    }
+
+    .offcanvas-backdrop.show {
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar {
+        background-color: #fffbef !important;
+    }
+
+    .logo-burger {
+        padding-left: 1rem;
+    }
+
+    .nav-link:hover {
+        /* border-bottom:3px solid #52282a; */
+        text-decoration: none;
+    }
+
+    .nav-link.active {
+        border: 2px solid #52282a;
+        border-radius: 10px;
+        padding: 5px 10px;
+        background-color: #fdc607;
+        color: #341c02 !important;
+    }
+
+    .logo-cemilku {
+        width: 250px;
+        position: relative;
+        top: 7px;
+    }
+
+
     #banner {
         margin: 0 30px 0 30px;
     }
@@ -359,31 +431,48 @@ body {
 
 
     .product-category {
-        font-size: 4px;
+        font-size: 15px;
+        margin-bottom: 3px;
         color: #52282A;
         letter-spacing: 0px;
     }
 
 
     .product-title {
-        font-size: 7px;
+        font-size: 20px;
         font-weight: 600;
-        color: #00AEC7;
+        margin-bottom: 4px;
+        color: #3a1c1c;
     }
 
     .product-price {
-        font-size: 7px;
+        font-size: 18px;
         font-weight: 600;
+        margin-top: 4px;
+        margin-bottom: 20px;
     }
 
 
-}
+    .title-about-us {
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-    /* .product-card-left {
+    .subtitle-about-us {
+        font-size: 15px;
+        font-weight: 500;
+        color: #52282A;
+        margin-left: 0px;
+    }
+
+
+    .product-card-left {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+        padding: 10px 15px;
+        margin-left: 50px;
     }
 
     .product-card-right {
@@ -391,6 +480,22 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+        padding: 10px 15px;
+        margin-right: 90px;
+    }
+
+    .product-info-right {
+        flex: 1;
+        padding: 0px;
+        margin: 0 0 0 10px;
+        transform: none !important;
+    }
+
+    .product-info-left {
+        flex: 1;
+        padding: 0px;
+        margin: 0 70px 0 0;
+        transform: none !important;
     }
 
     .product-image {
@@ -408,5 +513,5 @@ body {
 
     .ps-5 {
         padding-left: 0 !important;
-    } */
-/* }
+    }
+}
