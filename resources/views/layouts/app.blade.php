@@ -166,7 +166,7 @@
                 {{-- Cart + Profile (Always on right) --}}
                 <div class="d-flex align-items-center gap-2 ms-auto pe-2">
                     <a class="nav-link" href="#">
-                        <i class="bi bi-cart3 fs-2" style="color: #341c02;"></i>
+                        <i class="bi bi-cart3 fs-2" style="color: #52282A;"></i>
                     </a>
                     {{-- PROFILE BUAT DESKTOP --}}
                     <div class="dropdown d-none d-sm-block ms-3">
