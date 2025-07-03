@@ -26,7 +26,10 @@
                 <div class="subtitle">Chinese New Year</div>
                 <div class="title">CemilKongsi Bouquet</div>
                 <div class="price-tag">Rp 150.000</div>
+                {{-- <div class="title">{{ $detail->name }}</div>
+                <div class="price-tag">{{ $detail->price }}</div> --}}
                 <div class="description" style="text-align: justify;">
+                    {{-- <p class="card-text">{{ $detail->description }} </p> --}}
                     Celebrate the Lunar New Year in the most practical and stylish way with the
                     CemilKongsi Tower! This exclusive snack tower is specially designed for the
                     special Lunar New Year moments, filled with a selection of favorite sweet and
@@ -34,6 +37,7 @@
                     of luck and prosperity.
                 <div class="size-label">SIZE</div>
                 <div class="size-value">85,6 cm (H) x 25 cm (W)</div>
+
 
                 {{-- BUTTON QUANTITY --}}
                 <div class="counter-container">
