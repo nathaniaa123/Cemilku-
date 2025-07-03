@@ -74,9 +74,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('customize', CustomizeController::class);
 });
 
-Route::get('/homepage', function(){
-    return view('homepage');
-})-> name('homepage');
+Route::get('/homepage', [HomeController::class,'index'])-> name('homepage');
 
 Route::get('/custom', function(){
     return view('custom');
@@ -84,12 +82,12 @@ Route::get('/custom', function(){
 
 Route::get('/collections', [CollectionsController::class, 'index'])->name('collections');
 
-Route::get('/detail', function(){
-    return view('detail');
-})->name('detail');
+// Route::get('/detail', function(){
+//     return view('detail');
+// })->name('detail');
 
 // Blom ada id jadi gabisa jalan shownya
-// Route::get('/detail/{id}', [CollectionsController::class, 'show'])->name('detail.show');
+Route::get('/detail/{id}', [CollectionsController::class, 'show'])->name('detail.show');
 // Route::post('/detail', [CollectionsController::class, 'store'])->name('collections.store');
 
 Route::get('/order', function(){
