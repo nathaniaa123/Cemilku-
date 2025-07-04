@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    {{-- BUTTON ADD TO CART & BUY NOW --}}
+                    {{-- BUTTON ADD TO CART AND BUY NOW --}}
                     <div class="button-container d-flex">
                         <button type="submit" class="btn btn-warning d-flex align-items-center justify-content-center" style="color: #52282A">
                             <img src="{{ asset('Asset/mysterybox/cart.png') }}" style="margin-right: 8px; width: 20px;">
