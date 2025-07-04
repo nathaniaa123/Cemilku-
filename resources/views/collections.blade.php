@@ -33,7 +33,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="{{ $item->name }}" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
@@ -65,7 +65,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
@@ -96,7 +96,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
@@ -128,7 +128,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
@@ -159,7 +159,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
@@ -191,7 +191,7 @@
                             <a href="{{ route('detail.show', ['id' => $item->id]) }}" style="text-decoration: none;">
                                 <div class="card text-white bg-light p-1">
                                     <img class="card-img-top p-2" src="{{ asset('assets/'.$item->image) }}" alt="Title" />
-                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <h4 class="card-title pe-2">{{ $item->name }}</h4>
                                     <p class="card-subtitle">Snack {{ $item->type }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h5 class="card-price">Rp {{ number_format($item->price, 0, ',', '.') }}</h5>
