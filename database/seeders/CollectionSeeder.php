@@ -110,7 +110,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'Celebrate the spirit of togetherness during Eid with CemilRaya Tower, a festive snack collection thoughtfully curated to enhance family gatherings and joyful moments throughout the blessed season.',
                 'price' => 370000.00,
                 'stock' => 95,
-                'image' => 'eid1.png',
+                'image' => 'ram1.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
@@ -121,7 +121,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'SnackBal Tower offers a delightful mix of sweet and savory snacks, specially selected to add flavor and joy to Ramadan and Eid celebrations, making gatherings even more special and meaningful.',
                 'price' => 345000.00,
                 'stock' => 80,
-                'image' => 'eid2.png',
+                'image' => 'ram2.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
@@ -132,7 +132,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'KueCeria Bouquet is a vibrant and cheerful snack bouquet that brings extra happiness to Eid celebrations, filled with colorful and delicious treats that brighten every gathering with joy.',
                 'price' => 268000.00,
                 'stock' => 68,
-                'image' => 'eid3.png',
+                'image' => 'ram3.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
@@ -143,7 +143,7 @@ class CollectionSeeder extends Seeder
                 'description' => 'Fitri Bouquet is a heartwarming snack set perfect for sharing during Eid festivities, featuring a carefully selected assortment of treats that symbolize happiness and sweet togetherness.',
                 'price' => 277000.00,
                 'stock' => 72,
-                'image' => 'eid4.png',
+                'image' => 'ram4.png',
                 'layer' => '4',
                 'created_at' => now()
             ],
