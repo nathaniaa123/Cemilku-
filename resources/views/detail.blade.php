@@ -6,7 +6,7 @@
     <script src="{{ asset('js/detail.js') }}"></script>
 
     {{-- BACK BUTTON --}}
-    <div class="back-button d-flex w-100 justify-content-between align-items-center" style="padding-top: 10px">
+    <div class="back-button d-flex w-100 justify-content-between align-items-center">
         <a href="/collections" id="backBtn">
             <img src="{{ asset('Asset/mysterybox/arrow_back.png') }}" alt="Back" style="height: 24px;" />
         </a>
@@ -37,8 +37,6 @@
                     @csrf
                     <input type="hidden" name="collection_id" value="{{ $detail->id }}">
                     <input type="hidden" name="price" value="{{ $detail->price }}">
-
-                    {{-- Tambahkan input hidden untuk stock --}}
                     <input type="hidden" id="stock" value="{{ $detail->stock }}">
 
                     {{-- BUTTON QUANTITY --}}
@@ -51,6 +49,12 @@
                         </div>
                     </div>
 
+                    {{-- ALERT QUANTITY MELEBIHI STOK --}}
+                    <div id="alertBox" class="alert-text mt-2" role="alert">
+                        <span id="alertMessage">Oops! Maximum stock limit reached.</span>
+                    </div>
+
+
                     {{-- BUTTON ADD TO CART AND BUY NOW --}}
                     <div class="button-container d-flex">
                         <button type="submit" class="btn btn-warning d-flex align-items-center justify-content-center" style="color: #52282A">
@@ -62,6 +66,11 @@
                         </a>
                     </div>
                 </form>
+
+                {{-- TOAST ALERT --}}
+                <div id="toastAlert" class="toast-alert">
+                    <span id="toastMessage">Oops! Maximum stock limit reached.</span>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +80,6 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 p-4 text-center">
                 <div class="success-icon mx-auto mb-3 mt-3">
-                    <!-- Kotak hijau ceklis -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 64 64">
                         <rect width="64" height="64" rx="12" fill="#28a745"/>
                         <path stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M18 34l10 10 18-24"/>
@@ -98,5 +106,4 @@
             });
         </script>
     @endif
-
 @endsection
